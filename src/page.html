@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{title}</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="{url_hljs_stylesheet}" />
+    <style>
+        {css}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{heading}</h1>
+    </header>
+    <!-- There must be NO extra whitespace inside <pre>, because it would be displayed verbatim. -->
+    <pre><code class="html">{source}</code></pre>
+    <script src="{url_hljs_script}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

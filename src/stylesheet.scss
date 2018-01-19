@@ -1,0 +1,70 @@
+$HEADER_FONT_SIZE: 14px;
+$HEADER_HEIGHT: 32px;
+$TAB_SIZE: 4;
+$PADDING_CODE: 4px;
+$BACKGROUND_COLOR: #23241f; // Monokai dark gray
+$TEXT_COLOR: white;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    min-height: 100%;
+    background-color: $BACKGROUND_COLOR;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    html {
+        min-height: 120%; /* to prevent header jumping 1px on scroll on iOS */
+    }
+}
+
+header {
+    align-items: center;
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(249, 249, 249, 0.783);
+    border-bottom: 1px solid rgb(176, 176, 176);
+    box-sizing: border-box;
+    display: flex;
+    font-family: sans-serif;
+    font-size: $HEADER_FONT_SIZE;
+    height: $HEADER_HEIGHT;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    h1 {
+        font-size: 1em;
+        max-width: 60%;
+        overflow: hidden;
+        padding: 0.1em; // so characters don't get clipped
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    header {
+        border-width: 0.5px;
+    }
+}
+
+pre {
+    color: white;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+    padding-top: $HEADER_HEIGHT;
+    tab-size: $TAB_SIZE;
+    z-index: 1;
+
+    code {
+        display: block;
+        height: 100%;
+        padding: $PADDING_CODE !important;
+        padding-bottom: 50% !important;
+    }
+}

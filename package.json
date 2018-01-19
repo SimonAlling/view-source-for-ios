@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "build-production": "webpack --env.production"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-preset-env": "^1.6.0",
+    "html-minifier": "^3.5.8",
+    "html-minifier-loader": "^1.4.0",
+    "minifycss-loader": "^0.2.0",
+    "node-sass": "^4.7.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.6",
+    "string-format": "^0.5.0",
+    "typescript": "^2.4.1",
+    "webpack": "^3.0.0"
+  }
+}
