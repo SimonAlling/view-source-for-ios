@@ -23,11 +23,19 @@ function generateHtml(sourceCode: string): string {
     });
 }
 
+function isSpecialPage(url: string): boolean {
+    return CONFIG.SPECIAL_PAGES.some(regex => regex.test(url));
+}
+
 function main(): void {
     const doctypeDeclaration = document.doctype ? new XMLSerializer().serializeToString(document.doctype) + "\n" : "";
     const sourceCode = doctypeDeclaration + document.documentElement.outerHTML;
     const uri = `data:text/html,` + encodeURIComponent(generateHtml(sourceCode));
-    window.open(uri);
+    if (isSpecialPage(location.href)) {
+        location.href = uri;
+    } else {
+        window.open(uri); // makes Safari crash on about:blank
+    }
 }
 
 main();
