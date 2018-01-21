@@ -1,5 +1,5 @@
 const HLJS_VERSION = "9.12.0";
-const THEME = "monokai-sublime";
+const THEME = "hybrid";
 const SPECIAL_PAGES: RegExp[] = [
     /^about:/,
 ];
