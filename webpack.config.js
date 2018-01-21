@@ -8,6 +8,7 @@ const FILE_MAIN = DIR_SOURCE + "main.ts";
 const CONFIG = require(FILE_CONFIG);
 const CONFIG_REQUIRED = [
     "ID",
+    "VERSION",
 ];
 
 const EXTENSIONS = ["ts", "js"];
@@ -24,8 +25,8 @@ function onlyTruthy(array) {
     return array.filter(Boolean);
 }
 
-function outputHeader(name) {
-    return "javascript:" + (name ? "/*" + name + "*/" : "");
+function outputHeader(name, version) {
+    return "javascript:" + (name ? "/*" + name + "-v" + version + "*/" : "");
 }
 
 module.exports = (env = {}) => {
@@ -86,7 +87,7 @@ module.exports = (env = {}) => {
             new webpack.optimize.ModuleConcatenationPlugin(),
             PRODUCTION && new MinifyPlugin(),
             PRODUCTION && new webpack.BannerPlugin({
-                banner: outputHeader(CONFIG.ID),
+                banner: outputHeader(CONFIG.ID, CONFIG.VERSION),
                 raw: true,
                 entryOnly: true,
             }),
