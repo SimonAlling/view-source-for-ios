@@ -5,9 +5,10 @@ View the HTML source of any page with a quick tap, directly in Safari. Takes 30 
 ![Viewing source of Example.com](doc/images/view-source-for-ios-ipad.png "Viewing source of Example.com")
 
 
+
 ## Table of Contents
-  1. [Installation](#installation)
-  1. [Build from source](#building-from-source)
+  1. [How to add to Safari](#how-to-add-to-safari)
+  1. [Build from source](#build-from-source)
      1. [Prerequisites](#prerequisites)
      1. [Clone the repo](#clone-the-repo)
      1. [Install dependencies](#install-dependencies)
@@ -18,17 +19,16 @@ View the HTML source of any page with a quick tap, directly in Safari. Takes 30 
 
 
 
-## Installation
+## How to add to Safari
 
-  1. Open the Settings app, navigate to _Safari_, and make sure _Show Favourites Bar_ is toggled on.
-  1. Add this (or any other) page as a bookmark. Enter e.g. _View Source_ as name.
-  1. Copy [this chunk of code](https://github.com/SimonAlling/view-source-for-ios/raw/master/view-source-for-ios.bookmarklet.js) to your clipboard.*
-  1. Open your bookmarks menu and navigate to the bookmark you added.
-  1. Tap _Edit_, then select your new bookmark.
-  1. Make sure the bookmark is in the _Favourites_ folder.
-  1. Tap the _Address_ field (which should contain something like `https://github.com/...`) and clear it.
-  1. Paste the code you copied and tap _Done_ or similar on your keyboard.
-  1. You can now view the source code of any web page using your new bookmark.
+If you're using an iPad, you might want to make sure that _Show Favourites Bar_ is toggled on under _Safari_ in the Settings app.
+
+  1. Add this (or any other) page as a bookmark, with e.g. _View Source_ as name.
+  1. Copy [this chunk of code](https://github.com/SimonAlling/view-source-for-ios/raw/master/view-source-for-ios.bookmarklet.js).*
+  1. Open your bookmarks menu and navigate to the bookmark you added. Tap _Edit_, select your new bookmark, and make sure it is in the _Favourites_ folder.
+  1. Tap the _Address_ field (which should contain something like `https://github.com/...`) and clear it. Paste the code you copied and tap _Done_ or similar on your keyboard.
+
+You can now view the source code of any web page using your new bookmark, which should be visible near the top of the screen on an iPad (if _Show Favourites Bar_ is toggled on).
 
 <sup>* Blindly copying and running code without understanding what it does or may do is generally a bad idea. If you don't trust this document, you should ask someone who knows programming for advice.</sup>
 
