@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "release": "bash ./release.sh",
     "build": "webpack",
     "build-production": "webpack --env.production"
   },
