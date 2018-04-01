@@ -18,9 +18,14 @@ function generateHtml(sourceCode: string): string {
         heading: TEXT.heading_prefix + url,
         source: escapeHtml(sourceCode),
         css: STYLE,
+        id_token: CONFIG.ID_TOKEN,
         url_hljs_script: CONFIG.URL_HLJS_SCRIPT,
         url_hljs_stylesheet: CONFIG.URL_HLJS_STYLESHEET,
     });
+}
+
+function isSelfPage() {
+    return null !== document.querySelector(CONFIG.SELECTOR_DETECT_PLUGIN);
 }
 
 function isSpecialPage(url: string): boolean {
@@ -28,6 +33,10 @@ function isSpecialPage(url: string): boolean {
 }
 
 function main(): void {
+    if (isSelfPage()) {
+        alert(TEXT.cannot_view_source);
+        return;
+    }
     const doctypeDeclaration = document.doctype ? new XMLSerializer().serializeToString(document.doctype) + "\n" : "";
     const sourceCode = doctypeDeclaration + document.documentElement.outerHTML;
     const uri = `data:text/html,` + encodeURIComponent(generateHtml(sourceCode));
